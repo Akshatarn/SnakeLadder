@@ -13,11 +13,12 @@ namespace SnakeLadderProgram
             Console.WriteLine("Welcome to Snake And Ladder Simulation");
             int position = 0;
             Console.WriteLine("Initial(Start) position is:" + position);
-           
+            int count = 0;
             while (position >=0 && position < 100)
             {
                 Random random = new Random();
                 int diceOutput = random.Next(1, 7);
+                count++;
                 Console.WriteLine("Dice Output is :" + diceOutput);
                 position = position + diceOutput;
                 Console.WriteLine("Position :" + position);
@@ -27,22 +28,31 @@ namespace SnakeLadderProgram
                 switch (option)
                 {
                     case 1:
+                        Console.WriteLine("Ladder");
+                        position += diceOutput;
+                        if(position>=100)
+                        {
+                            position = position - diceOutput;
+                        }
+                        Console.WriteLine("Position :" + position);
+                        break;
+                    case 2:
+                        Console.WriteLine("Snake");
+                        position -= diceOutput;
+                        if (position >0)
+                        {
+                            position = position + diceOutput;
+                        }
+                        Console.WriteLine("Position :" + position);
+                        break;
+                    default:
                         Console.WriteLine("No Play");
                         position = position;
                         Console.WriteLine("Position :" + position);
                         break;
-                    case 2:
-                        Console.WriteLine("Ladder");
-                        position += diceOutput;
-                        Console.WriteLine("Position :" + position);
-                        break;
-                    case 3:
-                        Console.WriteLine("Snake");
-                        position -= diceOutput;
-                        Console.WriteLine("Position :" + position);
-                        break;
                 }
             } 
+            Console.WriteLine("No of times dice thrown is : "+ count);
            Console.ReadLine(); 
         }
     }
