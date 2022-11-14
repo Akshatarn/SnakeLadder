@@ -12,6 +12,8 @@ namespace SnakeLadderProgram
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Snake And Ladder Simulation");
+            int position = 0;
+            Console.WriteLine("Initial(Start) position is:" + position);  
             Console.ReadLine();
         }
     }
