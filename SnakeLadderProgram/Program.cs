@@ -13,12 +13,10 @@ namespace SnakeLadderProgram
             Console.WriteLine("Welcome to Snake And Ladder Simulation");
             int position = 0;
             Console.WriteLine("Initial(Start) position is:" + position);
-            int count = 0;
             while (position >=0 && position < 100)
             {
                 Random random = new Random();
                 int diceOutput = random.Next(1, 7);
-                count++;
                 Console.WriteLine("Dice Output is :" + diceOutput);
                 position = position + diceOutput;
                 Console.WriteLine("Position :" + position);
@@ -52,7 +50,6 @@ namespace SnakeLadderProgram
                         break;
                 }
             } 
-            Console.WriteLine("No of times dice thrown is : "+ count);
            Console.ReadLine(); 
         }
     }
